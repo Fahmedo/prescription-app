@@ -26,6 +26,7 @@ nav {
   right: 0;
   margin-right: 100px;
   font-size: 20px;
+  color: rgb(6, 95, 212);
 }
 .navbar li,
 .login {
@@ -33,8 +34,31 @@ nav {
   display: inline-flex;
   line-height: 100px;
   padding: 0 0 0 50px;
+  /* transition: all 2s; */
 }
 
+/* Hambugar  */
+.ham-menu {
+  height: 3rem;
+  width: 3rem;
+  line-height: 100px;
+  position: relative;
+  padding: 0.5rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #2751cd;
+  border-radius: 0.25em;
+  display: none;
+}
+
+.ham-menu .line {
+  background-color: white;
+  border-radius: 1em;
+  width: 2rem;
+  height: 0.25rem;
+}
 .hero-sec {
   width: 100%;
   height: 100vh;
@@ -118,6 +142,7 @@ button:active span::before {
   background-size: cover;
   position: relative;
   padding: 30px;
+  overflow-y: hidden;
 }
 .Prescription-pg .drugs-btn {
   position: absolute;
@@ -149,7 +174,6 @@ button:active span::before {
   font-size: 15px;
   position: relative;
   overflow: hidden;
-  /* outline: 2px solid #2c9caf; */
 }
 
 .Prescription-pg button:hover {
@@ -174,4 +198,84 @@ button:active span::before {
 
 .Prescription-pg button:hover::before {
   width: 250%;
+}
+
+@media (max-width: 570px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  nav {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 10px;
+  }
+
+  .ham-menu {
+    display: block;
+    position: absolute;
+    right: 10px;
+  }
+  .ham-menu .line {
+    background-color: #fff;
+    border-radius: 1em;
+    width: 2rem;
+    height: 0.25rem;
+    display: grid;
+    margin-top: 5px;
+  }
+  .navbar {
+    width: 50%;
+    /* display: grid; */
+    position: absolute;
+    font-size: 20px;
+    z-index: 2;
+    background-color: #fff;
+    color: rgb(6, 95, 212);
+    margin-right: 0;
+    display: none;
+  }
+  .navbar li,
+  .login {
+    text-align: center;
+    box-sizing: border-box;
+    list-style: none;
+    padding: 10px 0 0 0;
+    display: grid;
+  }
+
+  .btn-prescription {
+    position: absolute;
+    height: 50px;
+    bottom: 20%;
+    left: 30%;
+  }
+
+  .Prescription-pg {
+    display: grid;
+    height: 80vh;
+    margin: 10px 0;
+
+    /* right: 10%; */
+  }
+  .Prescription-pg .bottom-btn {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    bottom: 0;
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-top: 40px;
+    /* margin: 0 200px; */
+  }
+  .btn {
+    margin-top: 40px;
+  }
+  .Prescription-pg .bottom-btn .patient-btn {
+    margin-top: 20px;
+    margin-left: 0;
+  }
 }
